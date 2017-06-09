@@ -1,10 +1,11 @@
 package exam
 
 import (
-	"testing"
 	"fmt"
-	"githup.com/karts/scheduler"
+	"testing"
 	"time"
+
+	"github.com/karts/scheduler"
 )
 
 type HelloMessage struct {
@@ -55,12 +56,12 @@ func TestRun(t *testing.T) {
 
 	sch.Start()
 
-	e1 := &scheduler.Event{StateId:2, Message:HelloMessage{Message:"I'm id 01"}}
+	e1 := &scheduler.Event{StateId: 2, Message: HelloMessage{Message: "I'm id 01"}}
 	actor01.Tell(e1)
 
-	e2 := &scheduler.Event{StateId:3, Message:HelloMessage{Message:"I'm id 02"}}
+	e2 := &scheduler.Event{StateId: 3, Message: HelloMessage{Message: "I'm id 02"}}
 	actor02.Tell(e2)
 	actor02.Tell(e2)
 
-	time.Sleep(time.Second * 10)
+	time.Sleep(time.Second * 1)
 }
